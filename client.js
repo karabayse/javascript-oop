@@ -37,6 +37,11 @@ function Book(title, author, year) {
   };
 }
 
+// Prototype 
+Book.prototype.getSummary = function() {
+  return `${this.title} was written by ${this.author} in ${this.year}`;
+};
+
 // Instantiate an object -> runs the Book function
 const book2 = new Book('Book Two', 'John Doe', '2018');
 const book3 = new Book('Book Three', 'Juan Doe', '2018');
