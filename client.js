@@ -37,9 +37,15 @@ function Book(title, author, year) {
   };
 }
 
-// Prototype 
+// Prototype: getSummary
 Book.prototype.getSummary = function() {
   return `${this.title} was written by ${this.author} in ${this.year}`;
+};
+
+// Prototype: getAge
+Book.prototype.getAge = function() {
+  const years = new Date().getFullYear() - this.year;
+  return `${this.title} is ${years} years old`;
 };
 
 // Instantiate an object -> runs the Book function
@@ -48,3 +54,4 @@ const book3 = new Book('Book Three', 'Juan Doe', '2018');
 
 console.log(book2.title);
 console.log(book3.getSummary());
+console.log(book3.getAge());
