@@ -48,6 +48,12 @@ Book.prototype.getAge = function() {
   return `${this.title} is ${years} years old`;
 };
 
+// Prototype: Revise / Change Year
+Book.prototype.revise = function(newYear) {
+  this.year = newYear;
+  this.revised = true;
+};
+
 // Instantiate an object -> runs the Book function
 const book2 = new Book('Book Two', 'John Doe', '2018');
 const book3 = new Book('Book Three', 'Juan Doe', '2018');
@@ -55,3 +61,6 @@ const book3 = new Book('Book Three', 'Juan Doe', '2018');
 console.log(book2.title);
 console.log(book3.getSummary());
 console.log(book3.getAge());
+
+book3.revise('2018');
+console.log(book3);
