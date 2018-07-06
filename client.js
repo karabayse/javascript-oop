@@ -58,9 +58,23 @@ Book.prototype.revise = function(newYear) {
 const book2 = new Book('Book Two', 'John Doe', '2018');
 const book3 = new Book('Book Three', 'Juan Doe', '2018');
 
+// Magazine Constructor
+function Magazine(title, author, year, month) {
+  Book.call(this, title, author, year);
+  this.month = month;
+}
+
+// Inherit Prototype
+Magazine.prototype = Object.create(Book.prototype);
+
+// Instantiate Magazine Object
+const mag1 = new Magazine('Mag One', 'Jane Doe', '2018', 'January');
+
+
 console.log(book2.title);
 console.log(book3.getSummary());
 console.log(book3.getAge());
+console.log(mag1.getSummary());
 
 book3.revise('2018');
 console.log(book3);
