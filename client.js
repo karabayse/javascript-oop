@@ -70,11 +70,28 @@ Magazine.prototype = Object.create(Book.prototype);
 // Instantiate Magazine Object
 const mag1 = new Magazine('Mag One', 'Jane Doe', '2018', 'January');
 
+// Object of Protos
+const bookProtos = {
+  getSummary: function() {
+    return `${this.title} was written by ${this.author} in ${this.year}`;
+  },
+  getAge: function() {
+    const years = new Date().getFullYear() - this.year;
+    return `${this.title} is ${years} years old`;
+  }
+};
+
+// Create Object
+const book4 = Object.create(bookProtos);
+book4.title = 'Book Four';
+book4.author = 'Jane Doe';
+book4.year = '2015';
 
 console.log(book2.title);
 console.log(book3.getSummary());
 console.log(book3.getAge());
 console.log(mag1.getSummary());
+console.log(book4);
 
 book3.revise('2018');
 console.log(book3);
