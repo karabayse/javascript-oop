@@ -87,11 +87,39 @@ book4.title = 'Book Four';
 book4.author = 'Jane Doe';
 book4.year = '2015';
 
+// ES6
+class es6Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+  getSummary() {
+    return `${this.title} was written by ${this.author} in ${this.year}`;
+  }
+  getAge() {
+    const years = new Date().getFullYear() - this.year;
+    return `${this.title} is ${years} years old`
+  }
+  revise(newYear) {
+    this.year = newYear;
+    this.revised = true;
+  }
+}
+
+// Instantiate Object
+const es6Book1 = newBook('ES6 Book One', 'Jane Doe', '2014')
+
+// Static Methods 
+
 console.log(book2.title);
 console.log(book3.getSummary());
 console.log(book3.getAge());
 console.log(mag1.getSummary());
 console.log(book4);
+console.log(es6Book1);
+es6Book1.revise('2015');
+console.log(es6Book1);
 
 book3.revise('2018');
 console.log(book3);
