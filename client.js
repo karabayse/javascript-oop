@@ -105,12 +105,15 @@ class es6Book {
     this.year = newYear;
     this.revised = true;
   }
+  // Static Method
+  static topBookStore() {
+    return 'Barnes & Noble';
+  }
 }
 
 // Instantiate Object
 const es6Book1 = newBook('ES6 Book One', 'Jane Doe', '2014')
 
-// Static Methods 
 
 console.log(book2.title);
 console.log(book3.getSummary());
@@ -123,3 +126,5 @@ console.log(es6Book1);
 
 book3.revise('2018');
 console.log(book3);
+
+console.log(Book.topBookStore());
