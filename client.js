@@ -112,8 +112,17 @@ class es6Book {
 }
 
 // Instantiate Object
-const es6Book1 = newBook('ES6 Book One', 'Jane Doe', '2014')
+const es6Book1 = new Book('ES6 Book One', 'Jane Doe', '2014')
 
+// Subclasses
+class eMagazine extends Book() {
+  constructor(title, author, year, month) {
+    super(title, author, year);
+    this.month = month;
+  }
+}
+
+const eMag = new eMagazine('Mag One', 'Jane Doe', '2017', 'February');
 
 console.log(book2.title);
 console.log(book3.getSummary());
@@ -123,8 +132,7 @@ console.log(book4);
 console.log(es6Book1);
 es6Book1.revise('2015');
 console.log(es6Book1);
-
 book3.revise('2018');
 console.log(book3);
-
 console.log(Book.topBookStore());
+console.log(eMag.getSummary());
