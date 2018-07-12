@@ -1,3 +1,3 @@
 ## JavaScript OOP
 
-JavaScript practice
+JavaScript ES5 and ES6 prototype practice
